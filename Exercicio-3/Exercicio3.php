@@ -1,9 +1,19 @@
 <?php
 $soma = 0;
-for ($i = 1; $i <= 10; $i++) {
-    $numero = (int)readline("Digite um numero: ");
-    $soma = $soma + $numero;
+$quantidade = 0;
+while (true) {
+    $valor = (int)readline();
+    if ($valor === 0) {
+        break;
+    }
+    $soma += $valor;
+    $quantidade++;
 }
-$media = $soma / 10;
-echo "Soma: $soma\n";
-echo "Media: $media";
+if ($quantidade > 0) {
+    $media = $soma / $quantidade;
+    echo "Somatória: $soma\n";
+    echo "Média: $media\n";
+    echo "Quantidade de valores lidos: $quantidade\n";
+} else {
+    echo "Nenhum valor foi lido.\n";
+}
